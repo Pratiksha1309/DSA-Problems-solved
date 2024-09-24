@@ -1,0 +1,51 @@
+# DSA-Problems-solved
+My solved DSA problems with solutions
+Tiling Problem
+Given a “2 x n” board and tiles of size “2 x 1”, count the number of ways to tile the given board using the 2 x 1 tiles. A tile can either be placed horizontally i.e., as a 1 x 2 tile or vertically i.e., as 2 x 1 tile. 
+
+Examples: 
+
+Input: n = 4
+Output: 5
+Explanation:
+For a 2 x 4 board, there are 5 ways
+
+All 4 vertical (1 way)
+All 4 horizontal (1 way)
+2 vertical and 2 horizontal (3 ways)
+
+Input: n = 3
+Output: 3
+Explanation:
+We need 3 tiles to tile the board of size  2 x 3.
+We can tile the board using following ways
+
+
+Place all 3 tiles vertically.
+Place 1 tile vertically and remaining 2 tiles horizontally (2 ways)
+
+In this problem, First tile is placed vertically, then n-1 ways will be there to place other tiles 
+If placed verically 
+tilingProblem(n-1)
+If First tile is placed horizontally, then other is to be placed horizontally compulsary. then n-2 ways will be there.
+If placed horizontally 
+tilingProblem(n-2)
+For calculating total ways = tilingProblem(n-1) + tilingProblem(n-2)
+
+Suppose n = 4
+If First tile is placed vertically, then 3 ways will be there to place other tiles 
+If First tile is placed horizontally, then other is to be placed horizontally compulsary. then 2 ways will be there.
+xn = tilingProblem(3) + tilingProblem(2)
+
+For first vertically placed tile,
+If second is placed vertically, then 2 ways will be there
+If second is placed horizontally, then 1 way will be there
+xn = tilingProblem(2) + tilingProblem(1) + tilingProblem(2)
+
+For first horizontally placed tile,
+If second is placed vertically, then 1 way will be there 
+If second is placed is horizontally, compulsarily last tile is to be placed below it. So, 0 way will be there. But it is also 1 way.
+xn = tilingProblem(1) + tilingProblem(0) + 1 + tilingProblem(1) + tilingProblem(0)
+xn = 1 + 1 + 1 + 1 + 1 = 5
+
+If 1 or 0 way will be there to place tile, then return 1
