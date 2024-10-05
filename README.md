@@ -1,2 +1,2 @@
 # DSA-Problems-solved
-My solved DSA problems with solutions
+In this repository, I am sharing my solved DSA problems with solutions.
